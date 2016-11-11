@@ -1,0 +1,29 @@
+{
+  "name": "game-lobby-server",
+  "version": "1.0.0",
+  "description": "a game lobby api server",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cynical89/game-lobby-server.git"
+  },
+  "author": "@cynical89",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cynical89/game-lobby-server/issues"
+  },
+  "homepage": "https://github.com/cynical89/game-lobby-server#readme",
+  "dependencies": {
+    "co": "^4.6.0",
+    "koa": "^1.2.4",
+    "koa-bodyparser": "^2.2.0",
+    "koa-cors": "0.0.16",
+    "koa-generic-session": "^1.11.3",
+    "koa-passport": "^1.3.0",
+    "koa-router": "^5.4.0",
+    "koa-static-folder": "^0.1.6"
+  }
+}
