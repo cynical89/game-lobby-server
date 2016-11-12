@@ -4,9 +4,11 @@
   "description": "a game lobby api server",
   "main": "index.js",
   "scripts": {
-		"test": "./node_modules/.bin/mocha ./tests/ && ./node_modules/.bin/eslint .",
-		"coverage": "./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha ./tests/",
-		"coveralls": "npm run coverage -- --report lcovonly && cat ./coverage/lcov.info | coveralls"
+    "start": "./node_modules/.bin/nodemon -e js,hbs index.js",
+    "webserver": "node index.js",
+    "test": "./node_modules/.bin/mocha ./tests/ && ./node_modules/.bin/eslint .",
+    "coverage": "./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha ./tests/",
+    "coveralls": "npm run coverage -- --report lcovonly && cat ./coverage/lcov.info | coveralls"
   },
   "repository": {
     "type": "git",
@@ -37,6 +39,7 @@
   "devDependencies": {
     "chai": "^3.5.0",
     "istanbul": "^0.4.5",
-    "mocha": "^3.1.2"
+    "mocha": "^3.1.2",
+    "nodemon": "^1.11.0"
   }
 }

@@ -14,6 +14,9 @@ const main = require("./controllers/main.js");
 
 routes.get("/", main.index);
 
+// start a new game
+routes.get("/game/newGame", main.newGame)
+
 // add passport strategies here
 
 app.use(routes.middleware());
