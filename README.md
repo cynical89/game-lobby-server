@@ -1,15 +1,30 @@
 # Game Lobby Server
-This is a sample of a game lobby server for multiplayer online games.
+This is a sample of the game lobby server for multiplayer online games.
 
-## To Use
+* This is a 3 part project. This is the server for the game lobby. It requires the Game-Lobby-Client and the Unity-Client
 
-To clone and run this repository you'll need [Git](https://git-scm.com) and [Node.js](https://nodejs.org/en/download/) (which comes with [npm](http://npmjs.com)) installed on your computer. From your command line:
+## Requirements
+* [Node.js](https://nodejs.org/en/) (Version 5 and up recommended)
+* [Unity3D](https://unity3d.com/get-unity/download) (Version 5 and up.)
 
+* [Game-Lobby-Client](https://github.com/cynical89/game-lobby-client) (Server for the lobby client)
+* [Unity Client](https://github.com/cynical89/unity-client) (Unity game this client executes)
+
+### Installation
+
+* Clone down the repository.
 ```
-# Clone this repository
 git clone https://github.com/cynical89/game-lobby-server.git
-# Go into the repository
-cd game-lobby-server
-# Install dependencies and run the app
-npm install && npm start
 ```
+
+* Install packages (from inside the game-lobby-client folder).
+```
+npm install
+```
+
+* Start it up.
+```
+npm start
+```
+
+* Enjoy!
