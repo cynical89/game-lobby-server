@@ -4,7 +4,9 @@
   "description": "a game lobby api server",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+		"test": "./node_modules/.bin/mocha ./tests/ && ./node_modules/.bin/eslint .",
+		"coverage": "./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha ./tests/",
+		"coveralls": "npm run coverage -- --report lcovonly && cat ./coverage/lcov.info | coveralls"
   },
   "repository": {
     "type": "git",
@@ -17,6 +19,8 @@
   },
   "homepage": "https://github.com/cynical89/game-lobby-server#readme",
   "dependencies": {
+    "bcrypt": "^0.8.7",
+    "chance": "^1.0.4",
     "co": "^4.6.0",
     "install": "^0.8.2",
     "koa": "^1.2.4",
@@ -29,5 +33,10 @@
     "redis": "^2.6.3",
     "socket.io-client": "^1.5.1",
     "socket.io-redis": "^1.1.1"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "istanbul": "^0.4.5",
+    "mocha": "^3.1.2"
   }
 }
