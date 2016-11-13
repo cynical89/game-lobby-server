@@ -12,8 +12,17 @@ const passport = require("koa-passport");
 
 const app = koa();
 
+//sockets
+const KoaSocket = require("koa-socket");
+const io = new KoaSocket();
+
+io.attach(app);
+
 exports.app = app;
 exports.passport = passport;
+
+// for all socket interations
+require("./controllers/sockets");
 
 // the auth model for passport support
 // require("./models/auth");
