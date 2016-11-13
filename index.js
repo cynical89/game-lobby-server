@@ -25,7 +25,7 @@ exports.passport = passport;
 require("./controllers/sockets");
 
 // the auth model for passport support
-// require("./models/auth");
+require("./models/auth");
 
 // trust proxy
 app.proxy = true;

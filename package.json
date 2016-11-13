@@ -26,7 +26,6 @@
     "chance": "^1.0.4",
     "co": "^4.6.0",
     "cradle": "^0.7.1",
-    "install": "^0.8.2",
     "koa": "^1.2.4",
     "koa-bodyparser": "^2.2.0",
     "koa-cors": "0.0.16",
@@ -35,11 +34,13 @@
     "koa-router": "^5.4.0",
     "koa-socket": "^4.4.0",
     "koa-static-folder": "^0.1.6",
+    "passport-local": "^1.0.0",
     "redis": "^2.6.3",
     "socket.io-client": "^1.5.1"
   },
   "devDependencies": {
     "chai": "^3.5.0",
+    "eslint": "^3.10.0",
     "istanbul": "^0.4.5",
     "mocha": "^3.1.2",
     "nodemon": "^1.11.0"
