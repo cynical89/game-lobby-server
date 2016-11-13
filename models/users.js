@@ -10,8 +10,15 @@ module.exports = {
 			id: username,
 			email: email,
 			password: encryptedPass,
-			timezone: timezone
+			timezone: timezone,
+			socketId: "socket:id",
+			friends: []
 		};
+		return user;
+	},
+	
+	addSocketId: (user, id) => {
+		user.socketId = id;
 		return user;
 	}
 };

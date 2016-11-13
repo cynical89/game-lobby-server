@@ -22,6 +22,8 @@ describe("User Model - New User", () => {
 		expect(user).to.have.property("password");
 		expect(user).to.have.property("email");
 		expect(user).to.have.property("timezone");
+		expect(user).to.have.property("socketId");
+		expect(user).to.have.property("friends");
 		return done();
 	});
 
@@ -36,6 +38,21 @@ describe("User Model - New User", () => {
 		expect(user.email).to.equal("e@e.com");
 		expect(user.timezone).to.be.a("string");
 		expect(user.timezone).to.equal("America/Los_Angeles");
+		expect(user.socketId).to.be.a("string");
+		expect(user.socketId).to.equal("socket:id");
+		expect(user.friends).to.be.an("Array");
+		expect(user.friends.length).to.equal(0);
+		return done();
+	});
+});
+
+describe("User Model - Add Socket Id", () => {
+	before(() => {
+		user = userModel.addSocketId(user, "/#sGpMHMF3INnmkhpZAAAA");
+	});
+
+	it("user should contain modified socket id", (done) => {
+		expect(user.socketId).to.equal("/#sGpMHMF3INnmkhpZAAAA");
 		return done();
 	});
 });
