@@ -1,4 +1,4 @@
-# Game Lobby Server
+# Game Lobby Server [![Build Status](https://travis-ci.org/cynical89/game-lobby-server.svg?branch=master)](https://travis-ci.org/cynical89/game-lobby-server) [![Coverage Status](https://coveralls.io/repos/github/cynical89/game-lobby-server/badge.svg?branch=master)](https://coveralls.io/github/cynical89/game-lobby-server?branch=master)
 This is a sample of the game lobby server for multiplayer online games.
 
 * This is a 3 part project. This is the server for the game lobby. It requires the Game-Lobby-Client and the Unity-Client
