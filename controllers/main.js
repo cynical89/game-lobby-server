@@ -39,5 +39,6 @@ module.exports.signup = function* newGame() {
 	if (document.error === true) {
 		this.throw(400, document.message);
 	}
-	return this.body = document;
+	// we shouldn't need to return anything to the user
+	this.throw(200, "Successfully logged in");
 };
