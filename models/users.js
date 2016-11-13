@@ -1,6 +1,10 @@
 "use strict";
 
 const bcrypt = require("bcrypt");
+const db = require("../helpers/db");
+const co = require("co");
+
+const viewData = require("../tests/mockData/usersdb.json");
 
 module.exports = {
 	newUser: (username, password, email, timezone = "America/Los_Angeles") => {
@@ -16,8 +20,27 @@ module.exports = {
 		};
 		return user;
 	},
-	
-	addSocketId: (user, id) => {
+
+	getUser: function getUser(username, password, test = false) {
+		let document = viewData;
+		/* istanbul ignore else  */
+		if (test === true) {
+			document = viewData;
+		}
+		else {
+			co(function* co() {
+				document = yield db.getDocument(username, "gcusers");
+			});
+		}
+		const passwordMatch = comparePassword(password, document);
+		/* istanbul ignore if  */
+		if (!passwordMatch) {
+			return {error: true, message: "You must provide valid credentials"};
+		}
+		return document;
+	},
+
+	addSocketId: function addSocketId(user, id) {
 		user.socketId = id;
 		return user;
 	}

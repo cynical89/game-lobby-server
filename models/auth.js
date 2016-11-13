@@ -16,7 +16,7 @@ passport.deserializeUser((user, done) => {
 const LocalStrategy = require("passport-local").Strategy;
 passport.use(new LocalStrategy((username, password, done) => {
 	co(function* auth() {
-		const user = yield userModel.getUser(username, password);
+		const user = userModel.getUser(username, password);
 		if (user.error === true) {
 			done(null, false);
 		} else {

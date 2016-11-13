@@ -46,12 +46,35 @@ describe("User Model - New User", () => {
 	});
 });
 
+describe("User Model - Get User ", () => {
+	before(() => {
+		user = userModel.getUser("admin", "default", true);
+	});
+
+	it("Returned user should be a valid object", (done) => {
+		expect(user).to.not.be.an("undefined");
+		expect(user).to.be.an("object");
+		return done();
+	});
+
+	it("Returned user should have required properties", (done) => {
+		expect(user).to.have.property("error");
+		expect(user).to.have.property("id");
+		expect(user).to.have.property("password");
+		expect(user).to.have.property("email");
+		expect(user).to.have.property("timezone");
+		expect(user).to.have.property("socketId");
+		expect(user).to.have.property("friends");
+		return done();
+	});
+});
+
 describe("User Model - Add Socket Id", () => {
 	before(() => {
 		user = userModel.addSocketId(user, "/#sGpMHMF3INnmkhpZAAAA");
 	});
 
-	it("user should contain modified socket id", (done) => {
+	it("User should contain modified socket id", (done) => {
 		expect(user.socketId).to.equal("/#sGpMHMF3INnmkhpZAAAA");
 		return done();
 	});

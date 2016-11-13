@@ -19,7 +19,7 @@ routes.get("/game/newGame", main.newGame);
 routes.post("/signup", main.signup);
 
 // add passport strategies here
-routes.get("/login",
+routes.post("/login",
 	passport.authenticate("local", {
 		successRedirect: "/",
 		failureRedirect: "/"
