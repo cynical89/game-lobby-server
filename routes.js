@@ -12,6 +12,7 @@ const main = require("./controllers/main.js");
 
 // routes
 routes.get("/", main.index);
+routes.get("/userinfo", main.userInfo);
 
 // start a new game
 routes.get("/game/newGame", main.newGame);

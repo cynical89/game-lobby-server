@@ -19,6 +19,21 @@ module.exports.newGame = function* newGame() {
 	yield this.body = game;
 };
 
+module.exports.userInfo = function* userInfo() {
+	if (this.isAuthenticated()) {
+		user = this.session.passport.user;
+	}
+	const document = yield db.getDocument(user.id, "gcusers");
+	if (document.error === true) {
+		this.throw(401, document.message);
+	}
+	const userObject = {
+		username: document.id,
+		friends: document.friends
+	};
+	return this.body = userObject;
+};
+
 module.exports.signup = function* newGame() {
 	const params = this.request.body;
 	if (!params.username) {
