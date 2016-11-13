@@ -12,7 +12,7 @@ const passport = require("koa-passport");
 
 const app = koa();
 
-//sockets
+// sockets
 const KoaSocket = require("koa-socket");
 const io = new KoaSocket();
 

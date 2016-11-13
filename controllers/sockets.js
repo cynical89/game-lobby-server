@@ -29,7 +29,7 @@ io.on("chat message", (ctx, data) => {
 	// eslint-disable-next-line require-yield
 	co(function* co() {
 		console.log(`*${data}`);
-		socket.emit("chat message", `${data}`)
+		socket.emit("chat message", `${data}`);
 	}).catch(onError);
 });
 
