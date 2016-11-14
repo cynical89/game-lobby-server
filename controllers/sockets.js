@@ -52,6 +52,9 @@ io.on("messageUser", (ctx, data) => {
 	});
 });
 
+// TODO: create new conversation with users
+// TODO: add new message sent to conversation
+
 function onError(err) {
 	console.log("error!");
 	console.error(err);

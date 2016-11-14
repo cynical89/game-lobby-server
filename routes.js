@@ -13,6 +13,8 @@ const main = require("./controllers/main.js");
 // routes
 routes.get("/", main.index);
 routes.get("/userinfo", main.userInfo);
+routes.post("/friends/:id", main.addFriends);
+routes.post("/game/addFriend/:id", main.gameRequest);
 
 // start a new game
 routes.get("/game/newGame", main.newGame);

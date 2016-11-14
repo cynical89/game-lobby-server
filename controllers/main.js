@@ -34,6 +34,23 @@ module.exports.userInfo = function* userInfo() {
 	return this.body = userObject;
 };
 
+// eslint-disable-next-line require-yield
+module.exports.addFriends = function* addFriends() {
+
+	if (this.params.id === null) {
+		this.throw(401, "You need to provide a valid ID");
+	}
+	// TODO: create freind request Notification.
+};
+
+// eslint-disable-next-line require-yield
+module.exports.gameRequest = function* gameRequest() {
+	if (this.params.id === null) {
+		this.throw(401, "You need to provide a valid ID");
+	}
+	// TODO: create game request notification
+};
+
 module.exports.signup = function* newGame() {
 	const params = this.request.body;
 	if (!params.username) {
