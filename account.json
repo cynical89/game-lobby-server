@@ -1,0 +1,11 @@
+{
+   "error": false,
+   "id": "admin",
+   "username": "admin",
+   "password": "$2a$12$epx/ti8I6tbktCutIsa.KO5Q/byWdEVDci.WlROsEg67N5B5.RGh6",
+   "email": "e@e.com",
+   "timezone": "America/Los_Angeles",
+   "socketId": "socket:id",
+   "friends": [
+   ]
+}
