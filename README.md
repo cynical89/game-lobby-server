@@ -5,6 +5,7 @@ This is a sample of the game lobby server for multiplayer online games.
 
 ## Requirements
 * [Node.js](https://nodejs.org/en/) (Version 5 and up recommended)
+* [CouchDB](http://couchdb.apache.org/) (For storing and accessing information)
 * [Unity3D](https://unity3d.com/get-unity/download) (Version 5 and up.)
 
 * [Game-Lobby-Client](https://github.com/cynical89/game-lobby-client) (Server for the lobby client)
@@ -21,6 +22,16 @@ git clone https://github.com/cynical89/game-lobby-server.git
 ```
 npm install
 ```
+
+* Install CouchDB
+[Install Instructions](https://wiki.apache.org/couchdb/Installation)
+
+* Add initial user to the db
+```
+ Install Make and run make to make the database and add the user
+ OR
+ Go to http://127.0.0.1:5984/_utils/ and make a database called 'gcusers' and add a document using info from  'account.json'
+ ```
 
 * Start it up.
 ```
