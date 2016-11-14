@@ -33,6 +33,25 @@ io.on("chat message", (ctx, data) => {
 	}).catch(onError);
 });
 
+io.on("updateSocket", (ctx, data) => {
+	co(function* co() {
+		const document = yield db.getDocument(data.user, "gcusers");
+		const user = userModel.addSocketId(document, data.socket);
+		const result = yield db.saveDocument(document, "gcusers");
+	});
+});
+
+io.on("messageUser", (ctx, data) => {
+	let socket;
+	console.log(`Sending pm from ${data.from} to ${data.to}`);
+	co(function* co() {
+		const document = yield db.getDocument(data.to, "gcusers");
+		socket = document.socketId;
+		io.socket.sockets.connected[`/#${socket}`].emit("getUserMessage",
+			{ user: data.from, message: data.message });
+	});
+});
+
 function onError(err) {
 	console.log("error!");
 	console.error(err);

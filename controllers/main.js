@@ -25,7 +25,7 @@ module.exports.userInfo = function* userInfo() {
 	}
 	const document = yield db.getDocument(user.id, "gcusers");
 	if (document.error === true) {
-		this.throw(401, document.message);
+		this.throw(400, document.message);
 	}
 	const userObject = {
 		username: document.id,
