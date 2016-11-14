@@ -28,7 +28,7 @@ npm install
 
 * Add initial user to the db
 ```
- Install Make and run make to make the database and add the user
+ Install Make and run 'make install' to make the database and add the user
  OR
  Go to http://127.0.0.1:5984/_utils/ and make a database called 'gcusers' and add a document using info from  'account.json'
  ```
