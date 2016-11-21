@@ -2,8 +2,10 @@
 
 const expect = require("chai").expect;
 const gameModel = require("../models/game");
+const userModel = require("../models/users");
 
 let game;
+let user;
 
 describe("Game Model - New Game", () => {
 	before(() => {
@@ -35,6 +37,27 @@ describe("Game Model - New Game", () => {
 		expect(game.time).to.equal(null);
 		expect(game.players).to.be.a("array");
 		expect(game.players.length).to.equal(0);
+		return done();
+	});
+});
+
+describe("Game Model - Add Player", () => {
+	before(() => {
+		user = userModel.newUser("name", "default", "e@e.com");
+		game = gameModel.addPlayer(game, user);
+	});
+
+	it("user and game should be a valid objects", (done) => {
+		expect(game).to.not.be.an("undefined");
+		expect(game).to.be.an("object");
+		expect(user).to.not.be.an("undefined");
+		expect(user).to.be.an("object");
+		return done();
+	});
+
+	it("returned game should contain the updated user", (done) => {
+		expect(game.players.length).to.equal(1);
+		expect(game.players[0]).to.equal(user);
 		return done();
 	});
 });
